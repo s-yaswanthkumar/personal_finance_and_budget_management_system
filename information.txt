@@ -1,0 +1,26 @@
+React Frontend Web App:   http://127.0.0.1:5173  (Port 5173)
+FastAPI Backend API:      http://127.0.0.1:8000  (Port 8000)
+Interactive Swagger Docs: http://127.0.0.1:8000/docs (Featuring 'Authorize' Button & JWT Protection)
+Health Diagnostic API:    http://127.0.0.1:8000/api/health (Checks PostgreSQL, PGVector, MongoDB, ML)
+CSV Template Download:    http://127.0.0.1:8000/api/transactions/csv-template
+PostgreSQL Database:      localhost:5432         (Port 5432, Service: postgresql-x64-18, PGVector v0.8.6)
+MongoDB Database:         MongoDB Atlas Cloud Cluster (cluster0.mst0hj0.mongodb.net)
+
+Standalone Flask API:     http://127.0.0.1:5000  (Run: python -m backend.flask_api)
+Flask Swagger Docs:       http://127.0.0.1:5000/apidocs (Flasgger Swagger UI with 'Authorize' Button)
+
+Demo Credentials:
+- Primary User:           Username: yaswanth   | Password: password123 (Sukhavasi Yaswanth, User ID: 1)
+- Demo Second User:       Username: demouser   | Password: demo123     (Demo User, User ID: 2)
+
+JWT & Swagger Verification Guide:
+1. Open Swagger Docs at http://127.0.0.1:8000/docs
+2. Execute POST /api/auth/login with the demo credentials to get your `access_token`.
+3. Click the green "Authorize" button at the top right of the Swagger UI.
+4. Paste the access token into the value field and click "Authorize".
+5. Test the protected GET and POST endpoints (marked with lock icons):
+   - [GET]  /api/auth/me                -> Verifies JWT authentication and retrieves user profile.
+   - [POST] /api/auth/verify-token       -> Verifies token validity and inspects decoded claims.
+   - [POST] /api/vector/search          -> PGVector semantic similarity search using cosine distance (<=>).
+   - [GET]  /api/vector/similar/{id}    -> PGVector nearest neighbor transaction discovery.
+   - [GET]  /api/vector/status          -> Diagnostics for PostgreSQL vector extension and HNSW index.

@@ -1,0 +1,27 @@
+# Git
+.git
+.gitignore
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+venv/
+env/
+
+# Frontend build & dependencies (handled inside frontend context)
+frontend/node_modules/
+frontend/dist/
+
+# Artifacts, preview images and logs
+pdf_preview/
+report_assets/
+assets_doc/
+*.pdf
+*.pptx
+*.log
+
+# Docker specific
+.dockerignore
